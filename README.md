@@ -31,7 +31,8 @@ Your conversations are never stored on a central server. Messages are encrypted 
 
 ##Architecture diagram
 
-[ Client A ]                                       [ Client B ]
+```
+  [ Client A ]                                       [ Client B ]
       |                                                  |
       | 1. Join Room (WSS)                               | 1. Join Room (WSS)
       |                                                  |
@@ -63,6 +64,7 @@ Your conversations are never stored on a central server. Messages are encrypted 
       |                                                  |
       |<---------- 10. Encrypted Chat (AES-GCM) ------->|
       |                                                  |
+```
       
 
 ## Setup and Installation
