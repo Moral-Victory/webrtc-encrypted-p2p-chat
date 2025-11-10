@@ -13,7 +13,7 @@ Your conversations are never stored on a central server. Messages are encrypted 
   * **🌐 Peer-to-Peer Communication:** Uses **WebRTC** to create a direct mesh network between users in a room. The server is only used for signaling (helping peers find each other) and does not have access to any message content.
   * **🛡️ Web3 Authentication:** Securely log in using your Ethereum wallet via the **Sign-In with Ethereum (SIWE)** standard. No passwords, no email addresses.
   * **📁 Secure File Sharing:** Transfer files directly to peers, with chunked sending and **SHA-256** hash verification to ensure file integrity.
-  * **💅 Rich Chat UI:** Includes features like emoji reactions, message pinning, real-time connection status, and sound notifications, built with React and Framer Motion.
+  * **    Rich Chat UI:** Includes features like emoji reactions, message pinning, real-time connection status, and sound notifications, built with React and Framer Motion.
   * **✨ Animated Background:** Features a dynamic 'Vanta.js' network animation on the landing page.
 
 ## Tech Stack
