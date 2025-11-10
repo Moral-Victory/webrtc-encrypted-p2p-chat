@@ -29,6 +29,42 @@ Your conversations are never stored on a central server. Messages are encrypted 
 | **Server** | Node.js, `ws` (WebSocket) | Signaling server for WebRTC handshakes |
 | **HTTPS** | `mkcert` (local) | Required for WebRTC and Web Crypto APIs |
 
+##Architecture diagram
+
+[ Client A ]                                       [ Client B ]
+      |                                                  |
+      | 1. Join Room (WSS)                               | 1. Join Room (WSS)
+      |                                                  |
+      '-------------------> [ Signaling Server ] <-------'
+                           (WebSocket @ port 3001)
+      |                                                  |
+      | 2. Server sends Client B's info to A             |
+      |                                                  |
+      '------------------ [ Signaling Server ]           |
+                                    |                  |
+      |                             | 3. Server sends  |
+      |                             |    Client A's info |
+      |                             |    to B            |
+      |                             '------------------> |
+      |                                                  |
+      | 4. Send WebRTC Offer (via Signaling Server)      |
+      '-------------------> [ Signaling Server ] -------'
+                                    | 5. Forward Offer
+                                    '------------------> |
+      |                                                  |
+      | 7. Forward Answer           | 6. Send WebRTC Answer (via Signaling Server)
+      '------------------- [ Signaling Server ] <-------'
+      |                                                  |
+      |                                                  |
+      |<---------- 8. Direct P2P Connection ---------->|
+      |                 (WebRTC Data Channel)            |
+      |                                                  |
+      |<---------- 9. E2E Key Exchange (ECDH) --------->|
+      |                                                  |
+      |<---------- 10. Encrypted Chat (AES-GCM) ------->|
+      |                                                  |
+      
+
 ## Setup and Installation
 
 This project requires both a client and a server to be running. Because WebRTC and the Web Crypto API **require a secure context**, you **must** run both servers over HTTPS, even locally.
