@@ -129,7 +129,7 @@ const LandingPage = ({ onGetStarted }) => {
               <MessageSquare size={24} className="text-vscode-dark" />
             </div>
             <div>
-              <h1 className="text-gray-900 dark:text-white font-bold text-xl transition-colors">DAuthChat</h1>
+              <h1 className="text-gray-900 dark:text-white font-bold text-xl transition-colors">MetaCrypt</h1>
               <p className="text-gray-500 dark:text-vscode-text-muted text-xs transition-colors">Decentralized P2P Messaging</p>
             </div>
           </div>
@@ -425,7 +425,7 @@ const LandingPage = ({ onGetStarted }) => {
                 <MessageSquare size={18} className="text-vscode-dark" />
               </div>
               <div>
-                <p className="text-gray-900 dark:text-white font-semibold transition-colors">DAuthChat</p>
+                <p className="text-gray-900 dark:text-white font-semibold transition-colors">MetaCrypt</p>
                 <p className="text-gray-500 dark:text-vscode-text-muted text-xs transition-colors">© 2025 • Open Source</p>
               </div>
             </div>
